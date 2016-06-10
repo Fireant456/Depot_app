@@ -6,15 +6,8 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
-class StoreController < ApplicationController
-  skip_before_action :authorize
-  include CurrentCart
-  before_action :set_cart
+class AdminController < ApplicationController
   def index
-    if params[:set_locale]
-      redirect_to store_url(locale: params[:set_locale])
-    else
-      @products = Product.order(:title)
-    end
+    @total_orders = Order.count
   end
 end
