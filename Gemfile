@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'bcrypt-ruby'
 gem 'sdoc', group: :doc
+gem 'bootstrap-sass'
 group :development, :test do
 gem 'sqlite3'
 gem 'byebug'

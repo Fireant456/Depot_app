@@ -8,17 +8,69 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller.controller_name %>">
-  <div id="banner">
-    <%= form_tag store_path, class: 'locale' do %>
-      <%= select_tag 'set_locale', 
-        options_for_select(LANGUAGES, I18n.locale.to_s),
-        onchange: 'this.form.submit()' %>
-      <%= submit_tag 'submit' %>
-      <%= javascript_tag "$('.locale input').hide()" %>
-    <% end %>
-    <%= image_tag("logo.png") %>
-    <%= @page_title || t('.title') %>
-  </div>
+    <nav class="navbar-inverse">
+    <div class="container">
+      <img src="/assets/java-icon.png" id="img-logo" class="navbar-brand">
+      <%= link_to "The Java Depot", '/', id: "logo", class: "navbar-brand" %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to " Home", '/', class:"glyphicon glyphicon-home" %></li>
+        <!-- Button to trigger modal --> 
+    <li><a href="#myModal" role="button" class="glyphicon glyphicon-envelope" data-toggle="modal"> Contact US!</a></li>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Contact Form</h4>
+        </div>
+        <div class="modal-body">
+              <form class="form-horizontal" name="commentform" method="post" action="#">
+        <div class="form-group">
+            <label class="control-label col-md-4" for="first_name">First Name</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-4" for="last_name">Last Name</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-4" for="email">Email Address</label>
+            <div class="col-md-6 input-group">
+            <span class="input-group-addon">@</span>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-4" for="comment">Question or Comment</label>
+            <div class="col-md-6">
+                <textarea rows="6" class="form-control" id="comments" name="comments" placeholder="Your question or comment here"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6">
+                <button type="submit" value="Submit" class="btn btn-custom pull-right">Send</button>
+            </div>
+        </div>
+    </form>
+        </div><!-- End of Modal body -->
+        </div><!-- End of Modal content -->
+        </div><!-- End of Modal dialog -->
+    </div><!-- End of Modal -->
+      <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-globe"></span> Language<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/en"><img src="/assets/us.png"> English</a></li>
+            <li><a href="/es"><img src="/assets/mx.png"> Spanish</a></li>
+          </ul>
+      </li>
+      </ul>
+    </div>
+    </nav>
   <div id="columns">
     <div id="side">
       <ul>

@@ -37,10 +37,10 @@
 }
 
 #columns {
-  background: #141;
+  background: #2B5E9C;
 
   #main {
-    margin-left: 17em;
+    margin-left: 22.5em;
     padding: 1em;
     background: white;
   }
@@ -49,8 +49,8 @@
   #side {
     float: left;
     padding: 1em 2em;
-    width: 13em;
-    background: #141;
+    width: 22em;
+    background: #2B5E9C;
 
     form, div {
       display: inline;
@@ -62,7 +62,7 @@
 
     #cart {
       font-size: smaller;
-      color:     white;
+      color:     black;
 
       table {
         border-top:    1px dotted #595;
@@ -125,11 +125,41 @@
 }
 //
 
-.locale {
+#locale {
   float: right;
   margin: -0.25em 0.1em;
+  padding-top: 10px;
 }
 
 .currentuser {
   color: white;
 }
+
+//Modal
+
+.modal {
+position: fixed;
+right: o;
+top: 40px;
+}
+.modal-header,
+.btn-custom {
+	background: #1ABC9C;
+	color: #FFF;
+	/* margin-right: 10px; */
+}
+.modal-body {
+	background: #73BFC1;
+}
+.popover   {
+	background-color: #e74c3c;
+	color: #ecf0f1;
+	width: 120px;
+}
+.popover.right .arrow:after {
+	border-right-color: #e74c3c;
+}
+.input-group[class*="col-"] {
+    padding-right: 15px;
+    padding-left: 15px;
+}	
